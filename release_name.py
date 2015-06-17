@@ -1,4 +1,4 @@
-#encoding=utf-8
+# encoding=utf-8
 import json
 import httplib
 import sys
@@ -9,7 +9,7 @@ url = u'/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=10&format=json
 host = u'fr.wikipedia.org'
 
 
-def parseRandomList(conn, host, url, word):
+def parse_random_list(conn, host, url, word):
     conn.request('GET', url, headers={'User-Agent': u'Random Word Correlation Release Namer 0.1'})
     response = conn.getresponse()
     data = response.read()
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     while True:
         c += 1
         print "Try {}".format(c)
-        page = parseRandomList(conn, host, url, word)
+        page = parse_random_list(conn, host, url, word)
         if page:
             print u"Found page: {}".format(page)
             print u"Possible release names:"
