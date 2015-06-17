@@ -25,7 +25,7 @@ if __name__ == '__main__':
         print u"Usage: release_name.py <word>"
         sys.exit()
     word = sys.argv[1]
-    conn = httplib.HTTPConnection(host)
+    conn = httplib.HTTPSConnection(host)
     c = 0
     while True:
         c += 1
